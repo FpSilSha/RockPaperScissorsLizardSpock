@@ -8,5 +8,6 @@ namespace RockPaperScissorsLizardSpock
 {
     class Round
     {
+
     }
 }

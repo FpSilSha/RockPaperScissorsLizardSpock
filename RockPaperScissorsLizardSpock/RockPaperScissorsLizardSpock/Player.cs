@@ -6,7 +6,35 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissorsLizardSpock
 {
-    class Player
+    abstract class Player
     {
+
+        public string name;
+        public string gestureChoice;
+        public int score;
+
+
+        public Player()
+        {
+            
+        }
+        public virtual void GiveName()
+        {
+            
+           
+        }
+
+        public virtual void ChooseGesture()
+        {
+
+
+
+        }
+
+
+
+
+
+
     }
 }

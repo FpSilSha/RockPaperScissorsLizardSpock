@@ -24,7 +24,7 @@ namespace RockPaperScissorsLizardSpock
             nameFirstHalf = aiNamesFirstHalf[Rand.Next(0, aiNamesFirstHalf.Count)];
             nameSecondHalf = aiNamesSecondHalf[Rand.Next(0, aiNamesSecondHalf.Count)];
             name = nameFirstHalf + " " + nameSecondHalf;
-            Console.WriteLine(name + " is ready to rumble!");
+            Console.WriteLine("The computer player " + name + " is ready to rumble!");
         }
 
 

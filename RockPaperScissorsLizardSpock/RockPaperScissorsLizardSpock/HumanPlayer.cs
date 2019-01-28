@@ -8,21 +8,43 @@ namespace RockPaperScissorsLizardSpock
 {
      class HumanPlayer:Player
     {
+        int numberChoice = 5;
 
         public HumanPlayer()
         {
-            
+           
         }
 
         public override void ChooseGesture()
         {
-            Console.WriteLine("Choose a gesture for the current fight to the death" +
-                "\n Pick 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
-           
+            do {
+                Console.WriteLine("\nChoose a gesture for the current fight to the death" +
+                    "\n Pick 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
+               try
+               {
+                  numberChoice = Convert.ToInt32(Console.ReadLine());
+                   
+               }
+               catch (FormatException) 
+               {
+                Console.WriteLine("\nYea....... I'm going to need you to not type anything other than a " + 
+                    "POSITIVE NUMBER BETWEEN 0 - 4, capiche?");
 
+               }
+               catch (OverflowException)
+               {
 
-
+               }
+                if(numberChoice < 0 || numberChoice > 4)
+                {
+                   Console.WriteLine("\nInvalid choice made! Please pick a POSTIVE NUMBER BETWEEN 0 and 4!");
+  
+                }
+              
             }
+            while(numberChoice < 0 || numberChoice > 4 );
+            gestureChoice = gestures[numberChoice]; 
+            Console.WriteLine(gestureChoice);
         }
         public override void GiveName()
         {

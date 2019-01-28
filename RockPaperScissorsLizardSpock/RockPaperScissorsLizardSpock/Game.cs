@@ -17,7 +17,8 @@ namespace RockPaperScissorsLizardSpock
        
             playerOne.GiveName();
             playerTwo.GiveName();
-
+            playerOne.ChooseGesture();
+            playerTwo.ChooseGesture();
 
 
 

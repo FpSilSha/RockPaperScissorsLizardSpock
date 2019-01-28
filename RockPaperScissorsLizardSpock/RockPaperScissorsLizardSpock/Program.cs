@@ -12,6 +12,7 @@ namespace RockPaperScissorsLizardSpock
         {
          Game nGame = new Game();
             nGame.DisplayRules();
+            nGame.RunGame();
             Console.ReadKey();
 
 

@@ -8,8 +8,8 @@ namespace RockPaperScissorsLizardSpock
 {
     class AIPlayer:Player
     {
-        List<string> aiNamesFirstHalf = new List<string>() {"Dancing", "Fighting", "Laughing", "Writhing", "Prancing", "frolicking", "GenericName" };
-        List<string> aiNamesSecondHalf = new List<string>() {"Robot", "Enemy","IntelligenceThatIsBetterThanYou","A.I.", "CoolVersionOfYou","Winner","OutOfThings" };
+        List<string> aiNamesFirstHalf = new List<string>() {"Dancing", "Fighting", "Laughing", "Writhing", "Prancing", "Frolicking", "GenericName" };
+        List<string> aiNamesSecondHalf = new List<string>() {"Robot", "Enemy","IntelligenceThatIsBetterThanYou","A.I.", "CoolVersionOfYou","Winner","OutOfNames" };
         string nameFirstHalf;
         string nameSecondHalf;
         Random Rand = new Random();

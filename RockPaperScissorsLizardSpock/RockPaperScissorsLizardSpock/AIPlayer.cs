@@ -13,6 +13,15 @@ namespace RockPaperScissorsLizardSpock
         string nameFirstHalf;
         string nameSecondHalf;
         Random Rand = new Random();
+
+
+
+        public AIPlayer()
+	{
+            GiveName();
+	}
+
+
         public override void ChooseGesture()
         {
             gestureChoice = gestures[Rand.Next(0, gestures.Count)];

@@ -8,15 +8,42 @@ namespace RockPaperScissorsLizardSpock
 {
     public class Game
     {
-       Player playerOne = new HumanPlayer();
-       Player playerTwo = new AIPlayer();
+       public void StartInstance()
+       {  
+            int gameChoice = -1;
+            do
+          {
+            
+            Console.WriteLine("\nHow many human players will be playing? Please choose 1 or 2");
+            try
+            {
+               gameChoice = Convert.ToInt32(Console.ReadLine());
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("\nAnd here I thought the number system was universal to understand..."+
+                    "\n Please choose a number that is 1 or 2 and input its Standard Form");
+            }
+          }
+            while (gameChoice < 1 || gameChoice > 2);
+
+            if(gameChoice == 1)
+            {
+                RunGame1();
+            }
+            else
+            {
+                RunGame2();
+            }
+
+       }
 
        
-       public void RunGame()
+       public void RunGame1()
         {
-       
-            playerOne.GiveName();
-            playerTwo.GiveName();
+            Player playerOne = new HumanPlayer();
+            Player playerTwo = new AIPlayer();
+            
             playerOne.ChooseGesture();
             playerTwo.ChooseGesture();
 
@@ -24,6 +51,14 @@ namespace RockPaperScissorsLizardSpock
 
         }
 
+        public void RunGame2()
+        {
+            Player playerOne = new HumanPlayer();
+            Player playerTwo = new HumanPlayer();
+            
+            playerOne.ChooseGesture();
+            playerTwo.ChooseGesture();
+        }
         public void DisplayRules()
         {
             Console.WriteLine(" Welcome to Rock Paper Scissors Lizard Spock!" +
@@ -35,10 +70,10 @@ namespace RockPaperScissorsLizardSpock
 
         }
         
+       // public void 
 
-
-    }
+    
 
    
-    
+    }
 }

@@ -12,7 +12,7 @@ namespace RockPaperScissorsLizardSpock
 
         public HumanPlayer()
         {
-           
+         GiveName();
         }
 
         public override void ChooseGesture()
@@ -35,22 +35,22 @@ namespace RockPaperScissorsLizardSpock
                {
 
                }
-                if(numberChoice < 0 || numberChoice > 4)
+                if(numberChoice < 0 || numberChoice > gestures.Count)
                 {
                    Console.WriteLine("\nInvalid choice made! Please pick a POSTIVE NUMBER BETWEEN 0 and 4!");
   
                 }
               
             }
-            while(numberChoice < 0 || numberChoice > 4 );
+            while(numberChoice < 0 || numberChoice > gestures.Count );
             gestureChoice = gestures[numberChoice]; 
             Console.WriteLine(gestureChoice);
         }
         public override void GiveName()
         {
-            Console.WriteLine("Give me a name");
+            Console.WriteLine("\nGive me a name");
              name = Console.ReadLine();
-            Console.WriteLine(" I AM " + name);
+            Console.WriteLine("\nI AM " + name);
           
         }
     }

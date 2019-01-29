@@ -13,7 +13,7 @@ namespace RockPaperScissorsLizardSpock
             bool replay = true;
             Game nGame = new Game();
             nGame.DisplayRules();
-            uint replayResponse;
+            uint replayResponse = 1;
            do
             {            
             nGame.StartInstance();
@@ -29,7 +29,7 @@ namespace RockPaperScissorsLizardSpock
                         Console.WriteLine("You were given two options. How is it this hard? 1 OR 2 buddy. 1 OR 2.");
                     }
                 }
-                while(!replayResponse == 1 || !replayResponse == 2);
+                while(replayResponse != 1 || replayResponse != 2);
                 if(replayResponse == 2)
                 {
                     replay = false;

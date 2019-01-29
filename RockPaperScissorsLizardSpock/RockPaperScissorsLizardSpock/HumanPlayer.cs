@@ -18,7 +18,7 @@ namespace RockPaperScissorsLizardSpock
         public override void ChooseGesture()
         {
             do {
-                Console.WriteLine("\nChoose a gesture for the current fight to the death" +
+                Console.WriteLine("\nChoose a gesture for the current fight to the death, " + this.name +
                     "\n Pick 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
                try
                {
@@ -33,22 +33,27 @@ namespace RockPaperScissorsLizardSpock
                }
                catch (OverflowException)
                {
-
+                    Console.WriteLine("Wow... You couldn't have been more off...unless you kept adding digits. Please comply? Wont continue otherwise..");
                }
-                if(numberChoice < 0 || numberChoice > gestures.Count)
+               
+                if(numberChoice < 0 || numberChoice >= gestures.Count)
                 {
-                   Console.WriteLine("\nInvalid choice made! Please pick a POSTIVE NUMBER BETWEEN 0 and 4!");
+                   Console.WriteLine("\nInvalid choice made!");
   
                 }
               
             }
-            while(numberChoice < 0 || numberChoice > gestures.Count );
+            while(numberChoice < 0 || numberChoice >= gestures.Count );
+            //catch (ArgumentOutOfRangeException)
+            //{
+            //    Console.WriteLine("You 'almost' did it. But.. Almost doing something, isn't doing it. Try again");
+            //}
             gestureChoice = gestures[numberChoice]; 
             Console.WriteLine(gestureChoice);
         }
         public override void GiveName()
         {
-            Console.WriteLine("\nGive me a name");
+            Console.WriteLine("\nGive you...me? a name");
              name = Console.ReadLine();
             Console.WriteLine("\nI AM " + name);
           

@@ -13,21 +13,16 @@ namespace RockPaperScissorsLizardSpock
         public string name;
         public string gestureChoice;
         public int score;
-        public List<string> gestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+        protected List<string> gestures = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
 
         public Player()
         {
             
         }
-        public virtual void GiveName()
-        {
+        public abstract void GiveName();
 
-        }
-
-        public virtual void ChooseGesture()
-        {
-
-        }
+        public abstract void ChooseGesture();
+        
 
 
 

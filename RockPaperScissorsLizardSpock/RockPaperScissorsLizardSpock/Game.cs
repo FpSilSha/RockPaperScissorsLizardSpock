@@ -23,7 +23,7 @@ namespace RockPaperScissorsLizardSpock
 
                 try
                 {
-                  gameChoice = Convert.ToInt32(Console.ReadLine());
+                  gameChoice = Convert.ToInt16(Console.ReadLine());
                 }
                 catch(FormatException)
                 {
@@ -71,6 +71,11 @@ namespace RockPaperScissorsLizardSpock
             }
           }
           while(bestOfGames < 1 || bestOfGames > UInt32.MaxValue);
+
+            if(bestOfGames >= 50)
+            {
+                Console.WriteLine("We are going to be here for a long time....");
+            }
             
 
             if(gameChoice == 1)
@@ -141,6 +146,7 @@ namespace RockPaperScissorsLizardSpock
         {
             Console.WriteLine("\n" + playerOne.name + " chose " + playerOne.gestureChoice + "\n" +
                 playerTwo.name + " chose " + playerTwo.gestureChoice);
+
             switch(playerOne.gestureChoice)
             {
             case("Rock"):

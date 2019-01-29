@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace RockPaperScissorsLizardSpock
 {
@@ -81,6 +82,7 @@ namespace RockPaperScissorsLizardSpock
             else
             {
                 playerOne = new HumanPlayer();
+                Console.WriteLine("\n\n NEXT PLAYER");
                 playerTwo = new HumanPlayer();
                 RunGame2();
             }
@@ -93,11 +95,15 @@ namespace RockPaperScissorsLizardSpock
             
             do
             {
+                Console.Clear();
                 Console.WriteLine("\n\nNew Round!");
                 playerOne.ChooseGesture();
+                Console.Clear();
                 playerTwo.ChooseGesture();
                 CompareGesture();
                 WinnerCheck();
+                Console.WriteLine("\nPress any key (enter?) to continue.");
+                Console.ReadKey();
 
             }
             while (playerOne.score < bestOfGames && playerTwo.score < bestOfGames);
@@ -107,12 +113,15 @@ namespace RockPaperScissorsLizardSpock
         {
            do
             {
+                Console.Clear();
                 Console.WriteLine("\n\nNew Round!");
                 playerOne.ChooseGesture();
+                Console.Clear();
                 playerTwo.ChooseGesture();
                 CompareGesture();
                 WinnerCheck();
-
+                Console.WriteLine("\nPress any key (enter?) to continue.");
+                Console.ReadKey();
             }
             while (playerOne.score < bestOfGames && playerTwo.score < bestOfGames);
 
@@ -130,6 +139,8 @@ namespace RockPaperScissorsLizardSpock
         
         public void CompareGesture()
         {
+            Console.WriteLine("\n" + playerOne.name + " chose " + playerOne.gestureChoice + "\n" +
+                playerTwo.name + " chose " + playerTwo.gestureChoice);
             switch(playerOne.gestureChoice)
             {
             case("Rock"):

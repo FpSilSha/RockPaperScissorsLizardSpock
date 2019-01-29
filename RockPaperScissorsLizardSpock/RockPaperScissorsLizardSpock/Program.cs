@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace RockPaperScissorsLizardSpock
 {
     class Program
@@ -13,20 +14,26 @@ namespace RockPaperScissorsLizardSpock
             bool replay = true;
             Game nGame = new Game();
             nGame.DisplayRules();
-            uint replayResponse = 1;
+            uint replayResponse = 3;
            do
             {            
              nGame.StartInstance();
-             Console.WriteLine("\n\n\nWould you like to play again? Enter 1 for yes and 2 for no.");
+             
                 do
                 {
                     try
                     {
+                        Console.WriteLine("\n\n\nWould you like to play again? Enter 1 for yes and 2 for no.");
                         replayResponse = Convert.ToUInt16(Console.ReadLine());
                     }
                     catch(FormatException)
                     {
                         Console.WriteLine("You were given two options. How is it this hard? 1 OR 2 buddy. 1 OR 2.");
+                    }
+                    catch(OverflowException)
+                    {
+                        Console.WriteLine("1 or 2 will suffice. Not a negative. Not what you want your"
+                            + " bank account to look like.");
                     }
                 }
                 while(replayResponse != 1 && replayResponse != 2);

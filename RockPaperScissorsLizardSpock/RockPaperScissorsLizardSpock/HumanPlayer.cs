@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace RockPaperScissorsLizardSpock
 {
      class HumanPlayer:Player
@@ -22,8 +23,9 @@ namespace RockPaperScissorsLizardSpock
                     "\n Pick 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
                try
                {
-                  numberChoice = Convert.ToInt32(Console.ReadLine());
-                   
+                  numberChoice = Convert.ToInt16(Console.ReadLine());
+                  gestureChoice = gestures[numberChoice]; 
+                  
                }
                catch (FormatException) 
                {
@@ -35,21 +37,22 @@ namespace RockPaperScissorsLizardSpock
                {
                     Console.WriteLine("Wow... You couldn't have been more off...unless you kept adding digits. Please comply? Wont continue otherwise..");
                }
-               
+               catch (ArgumentOutOfRangeException)
+               {
+                Console.WriteLine("You 'almost' did it. But.. Almost doing something, isn't doing it. Try again");
+               }
+
                 if(numberChoice < 0 || numberChoice >= gestures.Count)
                 {
                    Console.WriteLine("\nInvalid choice made!");
   
                 }
               
+
+
             }
             while(numberChoice < 0 || numberChoice >= gestures.Count );
-            //catch (ArgumentOutOfRangeException)
-            //{
-            //    Console.WriteLine("You 'almost' did it. But.. Almost doing something, isn't doing it. Try again");
-            //}
-            gestureChoice = gestures[numberChoice]; 
-            Console.WriteLine(gestureChoice);
+
         }
         public override void GiveName()
         {

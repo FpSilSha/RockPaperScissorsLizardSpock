@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace RockPaperScissorsLizardSpock
 {
     class AIPlayer:Player
@@ -25,7 +26,7 @@ namespace RockPaperScissorsLizardSpock
         public override void ChooseGesture()
         {
             gestureChoice = gestures[Rand.Next(0, gestures.Count)];
-            Console.WriteLine(gestureChoice);
+            
         }
 
         public override void GiveName()

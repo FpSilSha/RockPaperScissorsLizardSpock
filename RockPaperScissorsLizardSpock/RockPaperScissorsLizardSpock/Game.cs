@@ -239,8 +239,18 @@ namespace RockPaperScissorsLizardSpock
                         playerTwo.score++;
                         break;
                     }
+            default:
+                    {
+                        Console.WriteLine(" You made a poor decision in not deciding. Round forfeited." +
+                            "\nIf you want to actually move the game forward, don't do that..");
+                            
+                        break;
+                    }
 
+                   
             }
+            playerOne.gestureChoice = null;
+            playerTwo.gestureChoice = null;
         }
 
         public void WinnerCheck()
